@@ -52,7 +52,7 @@ def generate_markdown_page(scraped_info):
                              f"{item['content']}\n\n"
                              f"[Read More](./{file_name}.md)\n\n")
 
-    with open('./sites/index.md', 'w', encoding='utf-8') as file:
+    with open('./index.md', 'w', encoding='utf-8') as file:
         file.write(markdown_content)
 
 
@@ -73,7 +73,7 @@ def generate_subpages(scraped_info):
             markdown_page += f"{without_references(paragraph.text.strip())} \n\n"
 
         file_name = item['title'].replace(" ", "")
-        with open(f"./sites/{file_name}.md", 'w', encoding='utf-8') as file:
+        with open(f"./{file_name}.md", 'w', encoding='utf-8') as file:
             file.write(markdown_page)
 
 
